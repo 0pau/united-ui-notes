@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".noteImporterActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar3"
+        style="@style/Widget.Material3.Toolbar.OnSurface"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        app:title="@string/importer" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="15dp">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/preview"
+            android:textAllCaps="false"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="215dp"
+            android:layout_marginVertical="5dp"
+            android:animateLayoutChanges="false"
+            android:background="@drawable/import_options_card"
+            android:orientation="vertical"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp">
+
+            <ListView
+                android:id="@+id/checkListPreview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:choiceMode="none"
+                android:clickable="false"
+                android:divider="@null"
+                android:focusable="false"
+                android:visibility="gone" />
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/plainNotePreview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/textPreview"
+                        style="@style/Widget.AppCompat.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.5"
+                        android:background="@android:color/transparent"
+                        android:editable="false"
+                        android:ems="10"
+                        android:fadeScrollbars="true"
+                        android:gravity="top|left"
+                        android:inputType="textMultiLine|text"
+                        android:singleLine="false" />
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Import settings"
+                    android:textAllCaps="false"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:background="@drawable/spinner_bg"
+                        android:ems="10"
+                        android:hint="Title"
+                        android:inputType="textPersonName"
+                        android:paddingHorizontal="15dp"
+                        android:paddingVertical="10dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Category"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="16sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_weight="0"
+                            android:background="@drawable/spinner_bg"
+                            android:clickable="true"
+                            android:foreground="?selectableItemBackground"
+                            android:gravity="center_vertical"
+                            android:minWidth="125dp"
+                            android:onClick="folderChooser"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="10dp">
+
+                            <ImageView
+                                android:id="@+id/folderBadge"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:layout_weight="0"
+                                android:tint="@color/folderColorUnknown"
+                                app:srcCompat="@drawable/ic_round_folder_24" />
+
+                            <TextView
+                                android:id="@+id/folderName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="5dp"
+                                android:layout_weight="1"
+                                android:text="@string/uncategorised"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textSize="16sp" />
+
+                            <ImageView
+                                android:id="@+id/imageView5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0"
+                                app:srcCompat="@drawable/ic_baseline_arrow_drop_down_24" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Import as"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="16sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_weight="0"
+                            android:background="@drawable/spinner_bg"
+                            android:gravity="center_vertical"
+                            android:minWidth="100dp"
+                            android:orientation="horizontal"
+                            android:paddingLeft="5dp">
+
+                            <Spinner
+                                android:id="@+id/note_type_spinner"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:dropDownWidth="200dp"
+                                android:dropDownVerticalOffset="35dp"
+                                android:entries="@array/note_types"
+                                android:popupBackground="@drawable/spinner_popup_bg"
+                                android:spinnerMode="dropdown" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/item_separate_setting"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="The items are separated by..."
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="16sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_weight="0"
+                            android:background="@drawable/spinner_bg"
+                            android:gravity="center_vertical"
+                            android:minWidth="100dp"
+                            android:orientation="horizontal"
+                            android:paddingLeft="5dp">
+
+                            <Spinner
+                                android:id="@+id/item_sep_spinner"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:dropDownWidth="200dp"
+                                android:dropDownVerticalOffset="45dp"
+                                android:entries="@array/item_separators"
+                                android:popupBackground="@drawable/spinner_popup_bg"
+                                android:spinnerMode="dropdown" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@android:drawable/divider_horizontal_bright"
+            android:dividerPadding="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:showDividers="middle">
+
+            <Button
+                android:id="@+id/cancel_import_btn"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="0"
+                android:insetBottom="4dp"
+                android:onClick="cancel"
+                android:text="@string/cancel" />
+
+            <Button
+                android:id="@+id/start_import_btn"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="0"
+                android:onClick="save"
+                android:text="Import" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

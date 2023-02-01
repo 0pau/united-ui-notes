@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ToolbarColored">
+        <item name="colorOnPrimary">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">?attr/colorPrimary</item>
+        <item name="tint">?attr/colorOnPrimary</item>
+    </style>
+
+    <style name="AppBar" parent="Widget.Design.AppBarLayout">
+        <item name="android:background">?attr/windowBackground</item>
+        <item name="android:textColor">?attr/textColor</item>
+        <item name="android:layout_height">250dp</item>
+    </style>
+
+    <style name="titleCollapsed">
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="BottomSheet" parent="Theme.Design.BottomSheetDialog">
+        <item name="android:windowBackgroundBlurRadius">10dp</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="bottomSheetStyle">@style/BottomSheet.Style</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:navigationBarColor">?attr/noteBackground</item>
+    </style>
+
+    <style name="BottomSheet.Style" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_bg</item>
+    </style>
+
+</resources>

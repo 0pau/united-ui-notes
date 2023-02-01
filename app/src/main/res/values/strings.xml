@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">Notes</string>
+    <string name="notes_all">All notes</string>
+    <string name="folders">Folders</string>
+    <string name="folder">Folder</string>
+    <string name="note">Note</string>
+    <string name="new_item">Add new...</string>
+    <string name="library">Library</string>
+    <string name="create_folder">Create folder</string>
+    <string name="create">Create</string>
+    <string name="cancel">Cancel</string>
+    <string name="create_folder_hint">Enter the name of the new folder</string>
+    <string name="checklist">Checklist</string>
+    <string name="add_item">Add item</string>
+    <string name="item_removed">Item removed</string>
+    <string name="delete">Delete</string>
+    <string name="share">Share</string>
+    <string name="uncategorised">Uncategorised</string>
+
+    <string name="folderColorRed">Red</string>
+    <string name="folderColorPink">Pink</string>
+    <string name="folderColorPurple">Purple</string>
+    <string name="folderColorDeepPurple">Deep purple</string>
+    <string name="folderColorIndigo">Indigo</string>
+    <string name="folderColorBlue">Blue</string>
+    <string name="folderColorLightBlue">Light blue</string>
+    <string name="folderColorCyan">Cyan</string>
+    <string name="folderColorTeal">Teal</string>
+    <string name="folderColorGreen">Green</string>
+    <string name="folderColorLightGreen">Light Green</string>
+    <string name="folderColorLime">Lime</string>
+    <string name="folderColorYellow">Yellow</string>
+    <string name="folderColorAmber">Amber</string>
+    <string name="folderColorOrange">Orange</string>
+    <string name="folderColorDeepOrange">Deep orange</string>
+    <string name="folderColorBrown">Brown</string>
+    <string name="select_category">Select a category</string>
+    <string name="new_category">Create category</string>
+    <string name="empty_checklist">Empty checklist</string>
+    <string name="importer">Import note</string>
+    <string name="preview">Preview</string>
+
+    <string-array name="note_types">
+        <item>Plain note</item>
+        <item>Checklist</item>
+    </string-array>
+
+    <string-array name="item_separators">
+        <item>New line</item>
+        <item>Comma</item>
+        <item>Semicolon</item>
+    </string-array>
+
+</resources>
